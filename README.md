@@ -195,6 +195,6 @@ class LinkedList:
     <img width="500" src="https://user-images.githubusercontent.com/31994778/124398601-35b96800-dd1f-11eb-903f-a77b04869d32.png">
     </p>
     
-    ---
+---
     
     
