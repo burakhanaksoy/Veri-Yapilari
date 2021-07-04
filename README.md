@@ -79,3 +79,6 @@ Dinamik olarak buyumez yada kuculmez | Dinamik olarak buyur ya da kuculur
 
   </p>
 
+<p align="center">
+  <img width="500" src="https://user-images.githubusercontent.com/31994778/124391512-99c93580-dcf9-11eb-9b9e-bba01c8004db.png">
+    </p>
