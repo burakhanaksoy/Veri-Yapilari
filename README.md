@@ -196,5 +196,70 @@ class LinkedList:
     </p>
     
 ---
+
+<h2>Abstract Data Tipleri</h2>
+
+<b><i>"Abstract data tipleri, bir data tipinden cok, o data tipinin kurallarini, yapisini, icerdigi fonksiyonlari belirten bir blueprinttir diyebiliriz. ADT'nin siniri yoktur, cunku ADT array, queue, stack gibi sonlu bir sey degildir, aksine, array, queue, stack gibi data tiplerinin ortaya cikmasina vesile olan bir abstraction (soyutlama)'dir."</b></i>
+
+Bir gelistiricinin bilmesi gereken data tipleri icinde, bagli ve cift-bagli listeden sonra, <b>stack(yigin)</b> ve <b>queue(sira)</b> veri yapilari gelir.
+
+<h3>Stack</h3>
+
+Turkce'ye 'yigin' olarak cevirebiliriz.
+
+Stack'in en belirgin ozelligi LIFO(Last in first out) kurali ile calismasidir.
+
+- Son eklenen obje, ilk cikarilan obje olur.
+- En bilinen iki ozelligi pop ve push fonksiyonlaridir.
+- <b>Pop</b>, yigindaki en son eklenen objeyi siler ve dondurur.
+- <b>Push</b>, yigina obje ekler.
+- <b>Top</b>, yigindaki en son eklenen objeyi silmeden dondurur.
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/31994778/124504995-390d2c00-ddd1-11eb-83af-e6f8f58d20b7.png">
+    </p>
     
-    
+<h4>Kullanim Alanlari</h4>
+
+- Internet tarayicilarinin gecmis'i tutmasi.
+- Parantezlerin (){}[] dogru kapatilip kapatilmadiginin bulunmasi.
+- Undoing, backtracking (yapilan islemi geri alma)
+
+---
+
+<h4>Implementasyon</h4>
+
+`Stack` yapisini iki turlu, bagli liste ve dizi, ile implemente edebiliriz.
+
+<h5>Dizi Implementasyonu</h5>
+
+```python
+class Stack:
+    def __init__(self):
+        self.arr = []
+
+    def size(self):
+        return len(self.arr)
+
+    def push(self, element):
+        self.arr.append(element)
+
+    def pop(self):
+        if not len(self.arr) > 0:
+            return
+        temp = self.arr[len(self.arr) - 1]
+        del self.arr[len(self.arr) - 1]
+        return temp
+
+    def peek(self):
+        if not len(self.arr) > 0:
+            return
+        print(self.arr[len(self.arr) - 1])
+
+    def show(self):
+        print(self.arr[::-1])
+```
+
+<h5>Bagli Liste Implementasyonu</h5>
+
+
