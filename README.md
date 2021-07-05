@@ -262,4 +262,37 @@ class Stack:
 
 <h5>Bagli Liste Implementasyonu</h5>
 
+Bagli liste kodunu paylasmadan direk implemente edelim, zaten daha onceden bagli listeyi kodlamistik.
+
+```python
+from linked_list import LinkedList
+
+
+class Stack:
+    def __init__(self):
+        self.arr = LinkedList()
+
+    def size(self):
+        return self.arr._size()
+
+    def push(self, element):
+        self.arr.append(element)
+
+    def pop(self):
+        if not self.arr._size() > 0:
+            return
+        temp = self.arr.get(self.arr._size() - 1)
+        self.arr.remove(self.arr._size() - 1)
+        return temp
+
+    def peek(self):
+        if not self.arr._size() > 0:
+            return
+        print(self.arr.get(self.arr._size() - 1))
+
+    def show(self):
+        for i in range(self.arr._size()-1, -1, -1):
+            print(self.arr.get(i), end=' ')
+        print('')
+```
 
