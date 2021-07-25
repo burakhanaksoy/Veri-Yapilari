@@ -502,3 +502,20 @@ Results in:
 <img width="500" alt="Screen Shot 2021-07-25 at 11 05 46 AM" src="https://user-images.githubusercontent.com/31994778/126892230-c9560517-91ad-4ec7-a46c-f1dd493475cf.png">
     </p>
     </div>
+
+<h4>Finding Min and Max with Recursion</h4>
+
+```py
+    def find_min(self, node=None):
+        if not node.left:
+            return node.val
+        return self.find_min(node.left)
+
+    def find_max(self, node=None):
+        if not node.right:
+            return node.val
+        return self.find_max(node.right)
+```
+
+<b>Using recursion is less verbose and elegant, in my opinion.</b>
+
