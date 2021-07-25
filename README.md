@@ -517,5 +517,5 @@ Results in:
         return self.find_max(node.right)
 ```
 
-<b>Using recursion is less verbose and elegant, in my opinion.</b>
+<b>Using recursion is less verbose and more elegant, in my opinion.</b>
 
