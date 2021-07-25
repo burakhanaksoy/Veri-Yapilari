@@ -368,27 +368,29 @@ Then, BST class
 
 ```py
 class BST:
-	
-	def __init__(self, root=None):
-		self.root = root
+    def __init__(self, root=None):
+        self.root = root
 
-	def insert(val, node=None):	
-		if self.root == None:
-			self.root.val = val
-			self.root.left = None
-			self.root.right = None
+    def insert(self, val, node=None):
+        if self.root == None:
+            self.root = Node(val)
+            self.node = self.root
+        else:
+            if node != None:
+                self.node = node
+            else:
+                self.node = self.root
+            if val < self.node.val:
+                if self.node.left == None:
+                    self.node.left = Node(val)
+                    return
+                self.insert(val, node=self.node.left)
 
-		if val < self.node.val:
-			if self.node.left == None:
-				self.node.left = val
-				return
-			self.insert(val, self.node.left)
-
-		if val > self.node.val:
-			if self.node.right == None:
-				self.node.right = val
-				return
-			self.insert(val, self.node.right)
+            if val > self.node.val:
+                if self.node.right == None:
+                    self.node.right = Node(val)
+                    return
+                self.insert(val, node=self.node.right)
 ```
 
 <h4>Traversing BST</h4>
@@ -434,14 +436,34 @@ If we used RNL, we would have
 Done recursively, as follows:
 
 ```py
-def traverse(self, node):
-        # Traverse using "prefix" L, N, R
-        if node is None:
-            pass
-        else:
-            self.traverse(node.left)  # L
-            print(node.val, end=' ')  # N
-            self.traverse(node.right)  # R
+def traverse(self, node=None):
+    # Traverse using "prefix" L, N, R
+    if node is None:
+        pass
+    else:
+        self.traverse(node.left)  # L
+        self._arr.append(node.val)  # N
+        self.traverse(node.right)  # R
+```
+
+<h4>Search</h4>
+
+Done recursively, as follows:
+
+```py
+def search(self, root, val):
+        # Base Cases: root is null or key is present at root
+        if root is None or root.val == val:
+            if not root:
+                return False
+            return True
+
+        # Key is greater than root's key
+        if root.val < val:
+            return self.search(root.right, val)
+
+        # Key is smaller than root's key
+        return self.search(root.left, val)
 ```
 
 
