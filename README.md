@@ -519,3 +519,46 @@ Results in:
 
 <b>Using recursion is less verbose and more elegant, in my opinion.</b>
 
+<h4>Delete Operation in BST</h4>
+
+Delete operation has 3 possible scenarios:
+
+<b>1st Scenario: Node to be deleted is a leaf</b>
+
+This is very easy, since leaves don't have child nodes, we simply remove them from the tree.
+
+```
+              50                            50
+           /     \         delete(20)      /   \
+          30      70       --------->    30     70 
+         /  \    /  \                     \    /  \ 
+       20   40  60   80                   40  60   80
+```
+
+<b>2nd Scenario: Node to be deleted has only one child</b>
+
+Copy the child to the node and delete the child 
+
+```
+              50                            50
+           /     \         delete(30)      /   \
+          30      70       --------->    40     70 
+            \    /  \                          /  \ 
+            40  60   80                       60   80
+```
+
+<b>3rd Scenario: Node to be deleted has two children</b>
+
+In this case, we need two choices: We can either select the biggest node of the left subtree of the deleted node and copy the content of the selected node or we can select the smallest node of the right subtree of the deleted node and copy the content of the selected node.
+
+```
+              50                            60
+           /     \         delete(50)      /   \
+          40      70       --------->    40    70 
+                 /  \                            \ 
+                60   80                           80
+```
+
+For the 3rd Scenario, we can use find_min and find_max methods we've written before.
+
+
