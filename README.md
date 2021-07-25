@@ -466,4 +466,39 @@ def search(self, root, val):
         return self.search(root.left, val)
 ```
 
+<h4>Finding Min and Max</h4>
 
+We already traversed the tree with "Prefix" algorithm. So, the min value will be the first element in the array.
+
+The max value will be the last element in the array.
+
+```py
+def find_min(self):
+    self._arr = []
+    self.traverse(self.root)
+    if len(self._arr) > 0:
+        return self._arr[0]
+    return None
+def find_max(self):
+    self._arr = []
+    self.traverse(self.root)
+    if len(self._arr) > 0:
+        return self._arr[len(self._arr) - 1]
+    return None
+```
+
+<h4>Running the Code</h4>
+
+<div align="center">
+    <p>
+<img width="500" alt="Screen Shot 2021-07-25 at 11 04 36 AM" src="https://user-images.githubusercontent.com/31994778/126892206-fa06923c-fa29-428d-80f4-f33b3667f108.png">
+    </p>
+    </div>
+    
+Results in:
+
+<div align="center">
+    <p>
+<img width="500" alt="Screen Shot 2021-07-25 at 11 05 46 AM" src="https://user-images.githubusercontent.com/31994778/126892230-c9560517-91ad-4ec7-a46c-f1dd493475cf.png">
+    </p>
+    </div>
