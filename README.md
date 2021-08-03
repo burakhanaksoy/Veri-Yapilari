@@ -561,4 +561,31 @@ In this case, we need two choices: We can either select the biggest node of the 
 
 For the 3rd Scenario, we can use find_min and find_max methods we've written before.
 
+Code:
+
+```py
+def delete(self, val, node):
+    if node is None:
+        return node
+    if val < node.val:
+        node.left = self.delete(val, node.left)
+    elif val > node.val:
+        node.right = self.delete(val, node.right)
+    else:
+        if node.left is None:
+            temp = node.right
+            node = None
+            return temp
+        elif node.right is None:
+            temp = node.left
+            node = None
+            return temp
+	    
+        temp = self.find_min(node.right)
+        node.val = temp
+        node.right = self.delete(temp, node.right)
+	
+    return node
+```
+
 
